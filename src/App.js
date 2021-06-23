@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { Text, Input, Button, Select, Stack } from "@chakra-ui/react";
 
 function App() {
@@ -64,8 +63,8 @@ function App() {
               onChange={handleInputChange}
             />
             <Select onChange={(e) => handleBaseCurrencyChange(e)}>
-              {Object.entries(baseCurrency).map(([key]) => (
-                <option value={key.toString()}>{key.toString()}</option>
+              {Object.keys(baseCurrency).map((key) => (
+                <option value={key}>{key}</option>
               ))}
             </Select>
           </Stack>
@@ -85,8 +84,8 @@ function App() {
         <Stack direction="row">
           <Input variant="filled" value={conversion.conversion_result} />
           <Select onChange={(e) => handleResultCurrencyChange(e)}>
-            {Object.entries(resultCurrency).map(([key]) => (
-              <option value={key.toString()}>{key.toString()}</option>
+            {Object.keys(resultCurrency).map((key) => (
+              <option value={key}>{key}</option>
             ))}
           </Select>
         </Stack>
